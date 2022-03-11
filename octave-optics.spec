@@ -1,8 +1,8 @@
-%define octpkg optics
+%global octpkg optics
 
 Summary:	Functions covering various aspects of optics with Octave
 Name:		octave-%{octpkg}
-Version:	0.1.3
+Version:	0.1.4
 Release:	1
 Source0:	http://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
 License:	GPLv3+
@@ -22,14 +22,28 @@ Functions covering various aspects of optics.
 
 This package is part of community Octave-Forge collection.
 
+%files
+%license COPYING
+%doc NEWS
+%dir %{octpkgdir}
+%{octpkgdir}/*
+
+#---------------------------------------------------------------------------
+
 %prep
-%setup -qcT
+%autosetup -p1 -n %{octpkg}-%{version}
+
+# remove backup files
+#find . -name \*~ -delete
 
 %build
-%octave_pkg_build -T
+%octave_pkg_build
 
 %install
 %octave_pkg_install
+
+%check
+%octave_pkg_check
 
 %post
 %octave_cmd pkg rebuild
@@ -39,10 +53,4 @@ This package is part of community Octave-Forge collection.
 
 %postun
 %octave_cmd pkg rebuild
-
-%files
-%dir %{octpkgdir}
-%{octpkgdir}/*
-%doc %{octpkg}-%{version}/NEWS
-%doc %{octpkg}-%{version}/COPYING
 
