@@ -4,10 +4,10 @@ Summary:	Functions covering various aspects of optics with Octave
 Name:		octave-%{octpkg}
 Version:	0.1.4
 Release:	1
-Source0:	http://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
+Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
 License:	GPLv3+
 Group:		Sciences/Mathematics
-Url:		https://octave.sourceforge.io/%{octpkg}/
+Url:		https://packages.octave.org/%{octpkg}/
 BuildArch:	noarch
 
 BuildRequires:	octave-devel >= 3.2
@@ -19,8 +19,6 @@ Requires(postun): octave
 
 %description
 Functions covering various aspects of optics.
-
-This package is part of community Octave-Forge collection.
 
 %files
 %license COPYING
