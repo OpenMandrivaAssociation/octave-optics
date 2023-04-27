@@ -1,21 +1,22 @@
 %global octpkg optics
 
 Summary:	Functions covering various aspects of optics with Octave
-Name:		octave-%{octpkg}
+Name:		octave-optics
 Version:	0.1.4
-Release:	1
-Source0:	https://downloads.sourceforge.net/octave/%{octpkg}-%{version}.tar.gz
+Release:	2
 License:	GPLv3+
 Group:		Sciences/Mathematics
-Url:		https://packages.octave.org/%{octpkg}/
-BuildArch:	noarch
+Url:		https://packages.octave.org/optics/
+Source0:	https://downloads.sourceforge.net/octave/optics-%{version}.tar.gz
 
-BuildRequires:	octave-devel >= 3.2
+BuildRequires:  octave-devel >= 3.2.0
 
 Requires:	octave(api) = %{octave_api}
 
 Requires(post): octave
 Requires(postun): octave
+
+BuildArch:	noarch
 
 %description
 Functions covering various aspects of optics.
@@ -30,9 +31,6 @@ Functions covering various aspects of optics.
 
 %prep
 %autosetup -p1 -n %{octpkg}-%{version}
-
-# remove backup files
-#find . -name \*~ -delete
 
 %build
 %octave_pkg_build
