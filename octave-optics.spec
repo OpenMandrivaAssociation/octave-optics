@@ -3,7 +3,7 @@
 Summary:	Functions covering various aspects of optics with Octave
 Name:		octave-optics
 Version:	0.1.4
-Release:	2
+Release:	3
 License:	GPLv3+
 Group:		Sciences/Mathematics
 Url:		https://packages.octave.org/optics/
